@@ -4,7 +4,7 @@
 
 ;; Author   : Phil Jackson <phil@shellarchive.co.uk>
 ;; URL      : https://github.com/philjackson/cljr-helm
-;; Version: 0.1
+;; Version: 0.2
 ;; Keywords : helm, clojure, refactor
 
 ;; This file is part of GNU Emacs.
@@ -80,5 +80,7 @@
 (defun cljr-helm ()
   (interactive)
   (helm-other-buffer 'helm-source-cljr "*cljr*"))
+
+(provide 'cljr-helm)
 
 ;;; cljr-helm.el ends here
