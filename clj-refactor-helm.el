@@ -1,3 +1,32 @@
+;;; clj-refactor-helm.el --- Wraps clojure refactor commands with helm -*- coding: utf-8-unix -*-
+
+;; Copyright (C) 2015 Phil Jackson
+
+;; Author   : Phil Jackson <phil@shellarchive.co.uk>
+;; URL      : https://github.com/philjackson/clj-refactor-helm
+;; Version: 1
+;; Keywords : helm, clojure, refactor
+
+;; This file is part of GNU Emacs.
+
+;; GNU Emacs is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+
+;; GNU Emacs is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;; Simply bind `cljr-helm` to a key (I'd suggest C-c C-r) in Clojure
+;; mode, and you're ready to go.
+
 (defvar cljr-helm-options
   '(("ad: add declaration" . cljr-add-declaration)
     ("ai: add import to ns" . cljr-add-import-to-ns)
@@ -45,4 +74,6 @@
     (action  . (("Run" . (lambda (candidate)
                            (funcall (cdr (assoc candidate cljr-helm-options)))))))))
 
-(helm-other-buffer 'helm-source-cljr "*cljr*")
+(defun cljr-helm ()
+  (interactive)
+  (helm-other-buffer 'helm-source-cljr "*cljr*"))
