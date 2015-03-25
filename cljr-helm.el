@@ -78,6 +78,7 @@
     (action  . (("Run" . (lambda (candidate)
                            (funcall (cdr (assoc candidate cljr-helm-options)))))))))
 
+;;;###autoload
 (defun cljr-helm ()
   (interactive)
   (helm-other-buffer 'helm-source-cljr "*cljr*"))
