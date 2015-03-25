@@ -1,10 +1,10 @@
-;;; clj-refactor-helm.el --- Wraps clojure refactor commands with helm -*- coding: utf-8-unix -*-
+;;; cljr-helm.el --- Wraps clojure refactor commands with helm -*- coding: utf-8-unix -*-
 
 ;; Copyright (C) 2015 Phil Jackson
 
 ;; Author   : Phil Jackson <phil@shellarchive.co.uk>
-;; URL      : https://github.com/philjackson/clj-refactor-helm
-;; Version: 1
+;; URL      : https://github.com/philjackson/cljr-helm
+;; Version: 0.1
 ;; Keywords : helm, clojure, refactor
 
 ;; This file is part of GNU Emacs.
@@ -23,6 +23,9 @@
 ;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
+
+;; Remembering key bindings for cljr is hard, especially the less
+;; frequently used ones - this should help with that.
 
 ;; Simply bind `cljr-helm` to a key (I'd suggest C-c C-r) in Clojure
 ;; mode, and you're ready to go.
@@ -77,3 +80,5 @@
 (defun cljr-helm ()
   (interactive)
   (helm-other-buffer 'helm-source-cljr "*cljr*"))
+
+;;; cljr-helm.el ends here
