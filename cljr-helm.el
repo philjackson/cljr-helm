@@ -31,6 +31,8 @@
 ;; Simply bind `cljr-helm` to a key (I'd suggest C-c C-r) in Clojure
 ;; mode, and you're ready to go.
 
+;;; Code:
+
 (defvar cljr-helm-options
   '(("ad: add declaration" . cljr-add-declaration)
     ("ai: add import to ns" . cljr-add-import-to-ns)
