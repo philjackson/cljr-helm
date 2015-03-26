@@ -76,7 +76,7 @@
     (candidates-in-buffer)
     (persistent-action . ignore)
     (action  . (("Run" . (lambda (candidate)
-                           (funcall (cdr (assoc candidate cljr-helm-options)))))))))
+                           (call-interactively (cdr (assoc candidate cljr-helm-options)))))))))
 
 ;;;###autoload
 (defun cljr-helm ()
