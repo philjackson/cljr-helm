@@ -4,7 +4,7 @@
 
 ;; Author   : Phil Jackson <phil@shellarchive.co.uk>
 ;; URL      : https://github.com/philjackson/cljr-helm
-;; Version  : 0.7
+;; Version  : 0.8
 ;; Keywords : helm, clojure, refactor
 ;; Package-Requires: ((clj-refactor "0.13.0") (helm "1.5.6"))
 
@@ -50,7 +50,7 @@
 ;;;###autoload
 (defun cljr-helm ()
   (interactive)
-  (helm-other-buffer 'cljr-helm-source "*cljr*"))
+  (helm-other-buffer 'helm-source-cljr "*cljr*"))
 
 (provide 'cljr-helm)
 
