@@ -4,7 +4,7 @@
 
 ;; Author   : Phil Jackson <phil@shellarchive.co.uk>
 ;; URL      : https://github.com/philjackson/cljr-helm
-;; Version  : 0.8
+;; Version  : 0.9
 ;; Keywords : helm, clojure, refactor
 ;; Package-Requires: ((clj-refactor "0.13.0") (helm-core "1.7.7"))
 
@@ -35,14 +35,14 @@
 
 (require 'helm)
 
+(defun cljr-helm-candidates ()
+  (mapcar (lambda (c)
+            (concat (car c) ": " (second (cdr c))))
+          cljr--all-helpers))
+
 (defvar helm-source-cljr
   '((name . "cljr functions hlel")
-    (init . (lambda ()
-              (helm-init-candidates-in-buffer 'global
-                (mapcar (lambda (c)
-                          (concat (car c) ": " (cadr (cdr c))))
-                        cljr--all-helpers))))
-    (candidates-in-buffer)
+    (candidates . cljr-helm-candidates)
     (persistent-action . ignore)
     (action . (("Run" . (lambda (candidate)
                           (string-match "^\\(.+?\\): " candidate)
@@ -57,3 +57,4 @@
 (provide 'cljr-helm)
 
 ;;; cljr-helm.el ends here
+
