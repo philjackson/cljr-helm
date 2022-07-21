@@ -6,7 +6,7 @@
 ;; URL      : https://github.com/philjackson/cljr-helm
 ;; Version  : 0.9
 ;; Keywords : helm, clojure, refactor
-;; Package-Requires: ((clj-refactor "0.13.0") (helm-core "1.7.7") (cl-lib "0.5"))
+;; Package-Requires: ((clj-refactor "0.13.0") (helm-core "3.6.0") (cl-lib "0.5"))
 
 ;; This file is part of GNU Emacs.
 
@@ -38,7 +38,7 @@
 
 ;;; Code:
 
-(require 'helm)
+(require 'helm-core)
 (require 'clj-refactor)
 
 (defun cljr-helm-candidates ()
